@@ -10,6 +10,8 @@ function NewInput() {
     // 4 : "",
   });
   const refs = useRef({});
+  useEffect(() => {}, [third]);
+
   return (
     <div>
       {arr.map((item, index) => {
@@ -27,25 +29,24 @@ function NewInput() {
             onChange={(e) => {
               // setValue(...value, (value[index] = e.target.value));
 
-              if (refs.current[0] === refs.current[0]) {
-                console.log(refs.current[4]);
-                console.log(refs.current[0]);
+              // if (refs.current[0] === refs.current[0]) {
+              //   console.log(refs.current[4]);
+              //   console.log(refs.current[0]);
 
-                console.log(refs.current[1]);
+              //   console.log(refs.current[1]);
 
-                console.log(refs.current[2]);
-                console.log(refs.current[3]);
-              }
-
-              // if (value[item] && refs.current[index + 1]) {
-
-              //   refs.current[index + 1].focus();
-              //   if (refs.current[3].value) {
-              //     setTimeout(() => {
-              //       alert("otp submitted");
-              //     }, 1000);
-              //   }
+              //   console.log(refs.current[2]);
+              //   console.log(refs.current[3]);
               // }
+
+              if (value[item] && refs.current[index + 1]) {
+                refs.current[index + 1].focus();
+                if (refs.current[3].value) {
+                  setTimeout(() => {
+                    alert("otp submitted");
+                  }, 1000);
+                }
+              }
             }}
           />
         );
